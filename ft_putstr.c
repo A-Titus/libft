@@ -6,18 +6,18 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:56:02 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/20 10:58:29 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/20 13:01:55 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-void ft_putstr(char const *s)
+void	ft_putstr(char const *s)
 {
 	int i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		ft_putchar(s[i]);
 		i++;
