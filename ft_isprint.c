@@ -6,17 +6,22 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:35:08 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/20 15:07:52 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/21 08:59:38 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int argv)
+int		ft_isprint(int a)
 {
-	if (argv >= 32 && argv <= 126)
+	if (a >= 32 && a <= 126)
 	{
-		return(1);
+		ft_putstr("is printable");
+		return (1);
 	}
-	return(0);
+	else
+	{
+		ft_putstr("is not printable");
+		return (0);
+	}
 }
