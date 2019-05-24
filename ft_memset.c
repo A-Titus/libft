@@ -1,25 +1,16 @@
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n)
 {
-	int i;
-	char *s;
+	unsigned char	*dst;
 
-	i = 0;
-
-	s = str;
-	while (i < n)
+	dst = str;
+	while (n > 0)
 	{
-		s[i] = (unsigned char)c;
-		i++;
+		*dst = (unsigned char) c;
+		dst++;
+		n--;
 	}
-	return((unsigned char *)s);
-}
-int main(void)
-{
-	char *str = "helloworld";
-	char * a = ft_memset(str,'@',5);
-	printf("%s",a);
-	return 0;
+	return str;
 }
