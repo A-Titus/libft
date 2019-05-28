@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:17:20 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/27 11:15:44 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/28 12:37:22 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,9 @@ void 		*ft_memchr(const void *str, int c, size_t n);
 void		*ft_memmove(void *str1, const void *str2, size_t n);
 char    	*ft_strstr(const char *haystack, const char *needle);
 char    	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putnbr(int n);
+void		ft_putnbr_fd(int n, int fd);
+void		ft_putstr_fd(char const *s, int fd);
 
 #endif
