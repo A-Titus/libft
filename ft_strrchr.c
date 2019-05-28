@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 12:03:24 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/23 12:58:03 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/28 12:02:05 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ char	*ft_strrchr(const char *str, int c)
 			return ((char *)str + i);
 	}
 	return (NULL);
-
 }
