@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 09:40:08 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/29 10:02:24 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/29 11:15:34 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_memalloc(size_t size)
 	mem = malloc(size);
 	if (mem == NULL)
 		return (NULL);
-	ft_memset(mem, 0, size);
+	ft_bzero(mem, size);
 	return (mem);
 }
