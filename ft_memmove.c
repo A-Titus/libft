@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 10:51:14 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/27 13:43:49 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/29 12:52:19 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	*ft_memmove(void *str1, const void *str2, size_t n)
 	size_t		i;
 	char		*dest;
 	const char	*src;
+
+	if (str2 == str1)
+		return (str1);
 
 	dest = (char *)str1;
 	src = (const char *)str2;
