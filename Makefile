@@ -6,15 +6,15 @@
 #    By: atitus <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 09:25:36 by atitus            #+#    #+#              #
-#    Updated: 2019/05/20 13:51:50 by atitus           ###   ########.fr        #
+#    Updated: 2019/05/28 09:14:20 by atitus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 
-SRC = $(shell ls | grep -E "ft_.+\.c")
+SRC = *.c
 
-SRCO =$(shell ls | grep -E "ft_.+\.o")
+SRCO = *.o
 
 CFLAGS = -Wall -Werror -Wextra 
 
