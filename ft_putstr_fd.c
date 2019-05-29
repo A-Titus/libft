@@ -6,13 +6,13 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 11:15:25 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/28 12:36:17 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/29 11:08:36 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char const *s, int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	while (*s)
 	{
