@@ -1,5 +1,4 @@
 /* ************************************************************************** */
-://github.com/A-Titus/libft.git
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
@@ -7,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 11:53:34 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/29 13:16:51 by atitus           ###   ########.fr       */
+/*   Updated: 2019/05/31 08:48:07 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +24,11 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		str1[i] = str2[i];
-		if (str2[i] == c)
+		if ((unsigned char)str2[i] ==(unsigned char)c)
 		{
-			return (str1);
+			return ((char *)str1 + i + 1);
 		}
 		i++;
 	}
-	return (str1);
+	return (NULL);
 }
