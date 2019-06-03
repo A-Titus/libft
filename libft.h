@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:17:20 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/03 12:43:10 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/03 14:59:03 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void 		*ft_memalloc(size_t size);
 void		ft_memdel(void **ap);
 char 		*ft_strnew(size_t size);
 void		ft_strdel(char **as);
+char		*ft_strchr(const char *s, int c);
 void		ft_strclr(char *s);
 void		ft_striter(char *s, void (*f)(char *));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
