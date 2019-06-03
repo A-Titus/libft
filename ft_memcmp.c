@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 14:30:55 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/24 15:14:16 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/03 12:50:21 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*str1;
 	const unsigned char	*str2;
-	
+
 	if (s1 == s2 || n == 0)
 		return (0);
 	str1 = (const unsigned char *)s1;
