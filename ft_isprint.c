@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:35:08 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/21 08:59:38 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/03 15:01:22 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,7 @@
 int		ft_isprint(int a)
 {
 	if (a >= 32 && a <= 126)
-	{
-		ft_putstr("is printable");
 		return (1);
-	}
 	else
-	{
-		ft_putstr("is not printable");
 		return (0);
-	}
 }
