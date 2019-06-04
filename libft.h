@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:17:20 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/04 11:07:17 by event            ###   ########.fr       */
+/*   Updated: 2019/06/04 15:10:40 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ char		*ft_strjoin(char const *s1, char const*s2);
 char		*ft_itoa(int n);
 size_t		ft_wordlen(const char *s, char c);
 size_t		ft_countwords(const char *s, char c);
-
-
+char		**ft_strsplit(char const *s, char c);
+char		*ft_strndup(const char *s, size_t n);
 #endif
