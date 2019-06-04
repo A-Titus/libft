@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:17:20 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/03 15:05:23 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/04 11:07:17 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,8 @@ int			ft_strnequ(char const *s1, char const *s2, size_t n);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const*s2);
 char		*ft_itoa(int n);
+size_t		ft_wordlen(const char *s, char c);
+size_t		ft_countwords(const char *s, char c);
+
 
 #endif
