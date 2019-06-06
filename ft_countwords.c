@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 11:51:37 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/06 14:07:06 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/06 14:39:48 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_countwords(const char *s, char c)
 {
 	int count;
-	int i;;
+	int i;
 
 	i = 0;
 	count = 0;
