@@ -3,73 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmoketo <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/12 13:14:20 by kmoketo           #+#    #+#             */
-/*   Updated: 2018/06/16 15:42:02 by kmoketo          ###   ########.fr       */
+/*   Created: 2019/06/06 13:42:29 by atitus            #+#    #+#             */
+/*   Updated: 2019/06/06 14:18:43 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-
-static int		ft_countp(const char *s, char c)
-{
-	int			cnt;
-	int			substr;
-
-	substr = 0;
-	cnt = 0;
-	while (*s != '\0')
-	{
-		if (substr == 1 && *s == c)
-			substr = 0;
-		if (substr == 0 && *s != c)
-		{
-			substr = 1;
-			cnt++;
-		}
-		s++;
-	}
-	return (cnt);
-}
-
-static int		ft_lenw(const char *s, char c)
-{
-	int			len;
-
-	len = 0;
-	while (*s != c && *s != '\0')
-	{
-		len++;
-		s++;
-	}
-	return (len);
-}
 
 char			**ft_strsplit(char const *s, char c)
 {
-	char		**splt;
-	int			wrd;
-	int			indx;
+	int		i;
+	int		j;
+	int		k;
+	char	**str2;
 
-	indx = 0;
-	if (!s || !c)
+	if (!s || !(str2 = (char **)malloc(sizeof(*str2) *
+		(ft_countwords(s, c) + 1))))
 		return (NULL);
-	wrd = ft_countp((const char *)s, c);
-	splt = (char **)malloc(sizeof(*splt) * (ft_countp((const char *)s, c) + 1));
-	if (splt == NULL)
-		return (NULL);
-	while (wrd--)
+	i = -1;
+	j = 0;
+	while ((size_t)++i < ft_countwords(s, c))
 	{
-		while (*s == c && *s != '\0')
-			s++;
-		splt[indx] = ft_strsub((const char *)s, 0, ft_lenw((const char *)s, c));
-		if (splt[indx] == NULL)
-			return (NULL);
-		s = s + ft_lenw(s, c);
-		indx++;
+		k = 0;
+		if (!(str2[i] = ft_strnew(ft_wordlen(&s[j], c) + 1)))
+			str2[i] = NULL;
+		while (s[j] == c)
+			j++;
+		while (s[j] != c && s[j])
+			str2[i][k++] = s[j++];
+		str2[i][k] = '\0';
 	}
-	splt[indx] = NULL;
-	return (splt);
+	str2[i] = 0;
+	return (str2);
 }
