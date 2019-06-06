@@ -1,46 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 12:13:51 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/06 10:32:28 by atitus           ###   ########.fr       */
+/*   Created: 2019/06/06 09:52:07 by atitus            #+#    #+#             */
+/*   Updated: 2019/06/06 09:52:16 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t		str_len(int n)
+static int		ft_isspace(int c)
 {
-	size_t	i;
-
-	i = 1;
-	while (n /= 10)
-		i++;
-	return (i);
+	if (c == ' ' || c == '\t' || c == '\n')
+		return (1);
+	return (0);
 }
 
-char				*ft_itoa(int n)
+char			*ft_strtrim(char const *s)
 {
-	char				*str;
-	size_t				len;
-	unsigned int		cpy;
+	size_t	begin;
+	size_t	end;
+	size_t	len;
+	char	*str;
 
-	len = str_len(n);
-	cpy = n;
-	if (n < 0)
-	{
-		cpy = -n;
-		len++;
-	}
-	if (!(str = ft_strnew(len)))
+	if (!s)
 		return (NULL);
-	str[--len] = cpy % 10 + '0';
-	while (cpy /= 10)
-		str[--len] = cpy % 10 + '0';
-	if (n < 0)
-		*(str + 0) = '-';
+	begin = 0;
+	end = ft_strlen(s) - 1;
+	while (begin < ft_strlen(s) && ft_isspace(s[begin]))
+		begin++;
+	while (end > begin && ft_isspace(s[end]))
+		end--;
+	len = end - begin + 1;
+	str = ft_strsub(s, begin, len);
 	return (str);
 }

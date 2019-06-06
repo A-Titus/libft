@@ -6,17 +6,17 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:17:20 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/04 15:10:40 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/06 12:04:19 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef libft
+# define libft
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <stdlib.h>
-
-#ifndef libft
-#define libft
 
 void		ft_putchar(char c);
 void		ft_putstr(char const *s);
@@ -27,7 +27,7 @@ int			ft_isascii(int a);
 int			ft_isalnum(int a);
 int			ft_isdigit(int a);
 int			ft_isalpha(int a);
-int			ft_atoi(char *str);
+int			ft_atoi(const char *str);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t		ft_strlen(const char *str);
@@ -71,4 +71,7 @@ size_t		ft_wordlen(const char *s, char c);
 size_t		ft_countwords(const char *s, char c);
 char		**ft_strsplit(char const *s, char c);
 char		*ft_strndup(const char *s, size_t n);
+char		*ft_strtrim(char const *s); 
+size_t		ft_strlcat(char *dst, const char *src, size_t size);
+
 #endif

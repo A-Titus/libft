@@ -6,7 +6,7 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 11:15:25 by atitus            #+#    #+#             */
-/*   Updated: 2019/05/29 11:08:36 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/06 12:00:07 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s)
-	{
-		ft_putchar_fd(*s++, fd);
-	}
+	int	i;
+
+	i = 0;
+	if (s)
+		while (s[i])
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 }

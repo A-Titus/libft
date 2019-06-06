@@ -3,42 +3,73 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: kmoketo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 14:21:12 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/04 14:21:20 by atitus           ###   ########.fr       */
+/*   Created: 2018/06/12 13:14:20 by kmoketo           #+#    #+#             */
+/*   Updated: 2018/06/16 15:42:02 by kmoketo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+static int		ft_countp(const char *s, char c)
 {
-	int				i;
-	int				j;
-	int				k;
-	char			**tab;
+	int			cnt;
+	int			substr;
 
-	i = 0;
-	k = 0;
-	tab = (char **)malloc(sizeof(char *) * (ft_countwords(s, c)) + 1);
-	if (tab == NULL)
-		return (NULL);
-
-		while (s[i])
+	substr = 0;
+	cnt = 0;
+	while (*s != '\0')
+	{
+		if (substr == 1 && *s == c)
+			substr = 0;
+		if (substr == 0 && *s != c)
 		{
-			while (s[i] == c)
-				i++;
-			j = i;
-			while (s[i] && s[i] != c)
-				i++;
-			if (i > j)
-			{
-				tab[k] = ft_strndup(s + j, i - j);
-				k++;
-			}
+			substr = 1;
+			cnt++;
 		}
-		tab[k] = NULL;
-		return (tab);
+		s++;
+	}
+	return (cnt);
 }
 
+static int		ft_lenw(const char *s, char c)
+{
+	int			len;
+
+	len = 0;
+	while (*s != c && *s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char		**splt;
+	int			wrd;
+	int			indx;
+
+	indx = 0;
+	if (!s || !c)
+		return (NULL);
+	wrd = ft_countp((const char *)s, c);
+	splt = (char **)malloc(sizeof(*splt) * (ft_countp((const char *)s, c) + 1));
+	if (splt == NULL)
+		return (NULL);
+	while (wrd--)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		splt[indx] = ft_strsub((const char *)s, 0, ft_lenw((const char *)s, c));
+		if (splt[indx] == NULL)
+			return (NULL);
+		s = s + ft_lenw(s, c);
+		indx++;
+	}
+	splt[indx] = NULL;
+	return (splt);
+}
