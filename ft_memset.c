@@ -20,6 +20,8 @@ void	*ft_memset(void *str, int c, size_t n)
 	i = 0;
 	if (n == 0)
 		return (str);
+	if (!str)
+		return (NULL);
 	dst = str;
 	while (i < n)
 	{
