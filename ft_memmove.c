@@ -20,8 +20,6 @@ void	*ft_memmove(void *str1, const void *str2, size_t n)
 
 	if (str2 == str1)
 		return (str1);
-	if (!str1 || !str2)
-		return (NULL);
 	dest = (char *)str1;
 	src = (const char *)str2;
 	i = 0;

@@ -20,8 +20,6 @@ void	*ft_memcpy(void *str1, const void *str2, size_t n)
 
 	if (str1 == str2)
 		return ((char*)str2);
-	if (!str1 || !str2)
-		return (NULL);
 	dest = (char *)str1;
 	src = (char *)str2;
 	i = 0;
