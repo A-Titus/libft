@@ -6,7 +6,7 @@
 #    By: atitus <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 09:25:36 by atitus            #+#    #+#              #
-#    Updated: 2019/06/06 12:26:27 by atitus           ###   ########.fr        #
+#    Updated: 2019/06/18 10:51:23 by atitus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,11 +50,9 @@ ft_memdel.c \
 ft_strclr.c \
 ft_strncat.c \
 ft_toupper.c \
-ft_countwords.c \
 ft_memmove.c \
 ft_strcmp.c \
 ft_strncmp.c \
-ft_wordlen.c \
 ft_isalnum.c \
 ft_memset.c \
 ft_strcpy.c \
@@ -106,11 +104,9 @@ ft_memdel.o \
 ft_strclr.o \
 ft_strncat.o \
 ft_toupper.o \
-ft_countwords.o \
 ft_memmove.o \
 ft_strcmp.o \
 ft_strncmp.o \
-ft_wordlen.o \
 ft_isalnum.o \
 ft_memset.o \
 ft_strcpy.o \

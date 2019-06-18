@@ -6,34 +6,56 @@
 /*   By: atitus <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 13:42:29 by atitus            #+#    #+#             */
-/*   Updated: 2019/06/06 14:18:43 by atitus           ###   ########.fr       */
+/*   Updated: 2019/06/18 10:38:40 by atitus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_strsplit(char const *s, char c)
+static size_t	ft_size(const char *str, char c)
 {
 	int		i;
-	int		j;
-	int		k;
-	char	**str2;
+	int		size;
 
-	if (!s || !(str2 = (char **)malloc(sizeof(*str2) * (ft_countwords(s, c) + 1))))
-		return (NULL);
-	i = -1;
-	j = 0;
-	while ((size_t)++i < ft_countwords(s, c))
+	i = 0;
+	size = 0;
+	while (str[i])
 	{
-		k = 0;
-		if (!(str2[i] = ft_strnew(ft_wordlen(&s[j], c) + 1)))
-			str2[i] = NULL;
-		while (s[j] == c)
-			j++;
-		while (s[j] != c && s[j])
-			str2[i][k++] = s[j++];
-		str2[i][k] = '\0';
+		while (str[i] && str[i] == c)
+			i++;
+		if (str[i])
+		{
+			while (str[i] && str[i] != c)
+				i++;
+			size++;
+		}
 	}
-	str2[i] = 0;
-	return (str2);
+	return (size++);
+}
+
+char			**ft_strsplit(const char *str, char c)
+{
+	int		i;
+	int		col;
+	int		start;
+	char	**tab;
+
+	i = 0;
+	col = 0;
+	if (!str || !(tab = (char **)malloc(sizeof(char *) * ft_size(str, c) + 1)))
+		return (NULL);
+	while (str[i])
+	{
+		if (str[i] == c)
+			i++;
+		else
+		{
+			start = i;
+			while (str[i] && str[i] != c)
+				i++;
+			tab[col++] = ft_strsub(str, start, i - start);
+		}
+	}
+	tab[col] = NULL;
+	return (tab);
 }
